@@ -14,7 +14,7 @@ namespace _0414hw
     public partial class GameForm : Form
     {
         Random r = new Random();
-        int CurrentQuestion = 1;
+        int CurrentQuestion = 0;
         int MaxQuestions = 15;
         public List<QuestionWithAnswers> Quiz = new List<QuestionWithAnswers>
         {
@@ -73,7 +73,7 @@ namespace _0414hw
 
         private void NewGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CurrentQuestion = 1;
+            CurrentQuestion = 0;
             QuestionCall();
         }
 
@@ -133,7 +133,7 @@ namespace _0414hw
         {
             if (Quiz[CurrentQuestion].RightAnswer == 2)
             {
-                if (CurrentQuestion + 1 == 16)
+                if (CurrentQuestion + 1 == 15)
                 {
                     MessageBox.Show("Вы выиграли");
                 }
@@ -146,11 +146,11 @@ namespace _0414hw
             }
             else
             {
-                if (CurrentQuestion > 5 && CurrentQuestion < 10)
+                if (CurrentQuestion > 4 && CurrentQuestion < 9)
                 {
                     MessageBox.Show("Вы забираете 1 000");
                 }
-                else if (CurrentQuestion > 10 && CurrentQuestion < 15)
+                else if (CurrentQuestion > 9 && CurrentQuestion < 14)
                 {
                     MessageBox.Show("Вы забираете 1 000");
                 }
@@ -213,6 +213,20 @@ namespace _0414hw
             }
         }
 
+        private void buttonNewGame_Click(object sender, EventArgs e)
+        {
+            NewGameToolStripMenuItem.PerformClick();
+        }
 
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonStop_Click(object sender, EventArgs e)
+        {
+            int[] Money = { 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000 };
+            MessageBox.Show("Вы забираете " + Convert.ToString(Money[CurrentQuestion - 1]));
+        }
     }
 }

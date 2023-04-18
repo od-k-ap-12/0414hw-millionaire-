@@ -141,6 +141,7 @@
             this.buttonNewGame.Size = new System.Drawing.Size(60, 35);
             this.buttonNewGame.TabIndex = 2;
             this.buttonNewGame.TabStop = false;
+            this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
             // 
             // buttonExit
             // 
@@ -151,6 +152,7 @@
             this.buttonExit.Size = new System.Drawing.Size(60, 35);
             this.buttonExit.TabIndex = 3;
             this.buttonExit.TabStop = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonStop
             // 
@@ -165,6 +167,7 @@
             this.buttonStop.TabIndex = 5;
             this.buttonStop.Text = "Стоп";
             this.buttonStop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
             // buttonAnswer1
             // 
